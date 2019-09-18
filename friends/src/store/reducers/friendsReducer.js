@@ -5,7 +5,11 @@ import {
 
     ADD_FRIEND_START,
     ADD_FRIEND_SUCCESS,
-    ADD_FRIEND_FAILURE
+    ADD_FRIEND_FAILURE,
+
+    REMOVE_FRIEND_START,
+    REMOVE_FRIEND_SUCCESS,
+    REMOVE_FRIEND_FAILURE
 } from '../actions'
 
 const initialState = {
@@ -52,7 +56,26 @@ export default function friendsReducer(state=initialState, action) {
                 ...state,
                 loading: false
             }
+        case REMOVE_FRIEND_START:
+            return {
+                ...state,
+                loading: true
+            }
+        case REMOVE_FRIEND_SUCCESS:
+                return {
+                    ...state,
+                    loading: false,
+                    friendsList: state.friendsList.filter(
+                        friend => friend.id !== action.payload
+                      )
 
+                }
+        case REMOVE_FRIEND_FAILURE:
+            return {
+                ...state,
+                loading: false
+
+            }        
         default: 
             return state
     }

@@ -14,7 +14,12 @@ import {
     ADD_FRIEND_START,
     ADD_FRIEND_SUCCESS,
     ADD_FRIEND_FAILURE,
-    addFriend
+    addFriend,
+
+    REMOVE_FRIEND_START,
+    REMOVE_FRIEND_SUCCESS,
+    REMOVE_FRIEND_FAILURE,
+    removeFriend
 } from './friends'
 
 export {
@@ -31,5 +36,10 @@ export {
     ADD_FRIEND_START,
     ADD_FRIEND_SUCCESS,
     ADD_FRIEND_FAILURE,
-    addFriend
+    addFriend,
+
+    REMOVE_FRIEND_START,
+    REMOVE_FRIEND_SUCCESS,
+    REMOVE_FRIEND_FAILURE,
+    removeFriend
 }

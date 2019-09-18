@@ -2,7 +2,7 @@ import React from 'react'
 
 //redux
 import { connect } from 'react-redux'
-import { addFriend } from '../store/actions'
+import { addFriend, removeFriend } from '../store/actions'
 
 //custom hooks
 import { useInput } from '../utils/hooks/useInput'
@@ -46,4 +46,4 @@ function FriendsForm(props) {
 }
 
 
-export default connect(null, { addFriend })(FriendsForm)
+export default connect(null, { addFriend, removeFriend })(FriendsForm)

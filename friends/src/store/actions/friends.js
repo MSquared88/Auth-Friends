@@ -31,3 +31,19 @@ export const addFriend = friend => dispatch => {
     })
 
 }
+
+export const REMOVE_FRIEND_START = " REMOVE_FRIEND_START"
+export const REMOVE_FRIEND_SUCCESS = " REMOVE_FRIEND_SUCCESS"
+export const REMOVE_FRIEND_FAILURE = " REMOVE_FRIEND_FAILURE"
+
+export const removeFriend = friend => dispatch => {
+    dispatch({ type: REMOVE_FRIEND_START })
+    axiosWithAuth().delete(`/friends/${friend}`)
+    .then(res => {
+        console.log(res)
+        dispatch({ type: REMOVE_FRIEND_SUCCESS, payload: friend })
+    })
+    .catch(err => {
+        dispatch({ type: REMOVE_FRIEND_FAILURE })
+    })
+}

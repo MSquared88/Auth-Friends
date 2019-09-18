@@ -17,6 +17,10 @@ function Login(props) {
   	const handleSubmit = e => {
 		e.preventDefault();
 		props.login(credentials, props.history)
+		setCredentials({
+			username: '',
+			password: ''
+		})
 	};
 
 	if (props.fetching) {
