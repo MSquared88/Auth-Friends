@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react'
 
+//router
+import { Link, Route } from 'react-router-dom';
+
+
 //redux
 import { connect }  from 'react-redux'
 import { getFriends, removeFriend } from '../store/actions'
 
 //components
 import FriendsForm from './FriendsForm'
+
 
 function FriendsList(props) {
     useEffect(() => {
@@ -21,6 +26,7 @@ function FriendsList(props) {
                 {props.friends.map(friend => (
                     <Friend key={friend.id} {...friend} removeFriend={props.removeFriend}/>
                 ))}
+
             </div>
         )
     }
@@ -33,8 +39,8 @@ function Friend(props) {
             <p>{props.age} years old</p>
             <p>{props.email}</p>
             <button onClick={() => {props.removeFriend(props.id)}}>Delete Friend</button>
-            <button>Edit Friend</button>
-
+            <button><Link to={`/friendsList/${props.id}/edit`}>Edit Friend</Link></button>
+            
         </div>
     )
 }

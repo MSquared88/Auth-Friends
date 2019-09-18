@@ -19,7 +19,12 @@ import {
     REMOVE_FRIEND_START,
     REMOVE_FRIEND_SUCCESS,
     REMOVE_FRIEND_FAILURE,
-    removeFriend
+    removeFriend,
+
+    UPDATE_FRIEND_START,
+    UPDATE_FRIEND_SUCCESS,
+    UPDATE_FRIEND_FAILURE,
+    updateFriend
 } from './friends'
 
 export {
@@ -41,5 +46,10 @@ export {
     REMOVE_FRIEND_START,
     REMOVE_FRIEND_SUCCESS,
     REMOVE_FRIEND_FAILURE,
-    removeFriend
+    removeFriend,
+
+    UPDATE_FRIEND_START,
+    UPDATE_FRIEND_SUCCESS,
+    UPDATE_FRIEND_FAILURE,
+    updateFriend
 }

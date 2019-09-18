@@ -47,3 +47,19 @@ export const removeFriend = friend => dispatch => {
         dispatch({ type: REMOVE_FRIEND_FAILURE })
     })
 }
+
+export const UPDATE_FRIEND_START = " UPDATE_FRIEND_START"
+export const UPDATE_FRIEND_SUCCESS = " UPDATE_FRIEND_SUCCESS"
+export const UPDATE_FRIEND_FAILURE = " UPDATE_FRIEND_FAILURE"
+
+export const updateFriend = (friend, updatedFriend) => dispatch => {
+    dispatch({ type: UPDATE_FRIEND_START })
+    axiosWithAuth().put(`/friends/${friend}`, updatedFriend)
+    .then(res => {
+        console.log(res)
+        dispatch({ type: UPDATE_FRIEND_SUCCESS, payload: friend })
+    })
+    .catch(err => {
+        dispatch({ type: UPDATE_FRIEND_FAILURE })
+    })
+}

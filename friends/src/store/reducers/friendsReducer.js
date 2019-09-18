@@ -9,7 +9,11 @@ import {
 
     REMOVE_FRIEND_START,
     REMOVE_FRIEND_SUCCESS,
-    REMOVE_FRIEND_FAILURE
+    REMOVE_FRIEND_FAILURE,
+
+    UPDATE_FRIEND_START,
+    UPDATE_FRIEND_SUCCESS,
+    UPDATE_FRIEND_FAILURE,
 } from '../actions'
 
 const initialState = {
@@ -70,13 +74,26 @@ export default function friendsReducer(state=initialState, action) {
                       )
 
                 }
-        case REMOVE_FRIEND_FAILURE:
+        case UPDATE_FRIEND_FAILURE:
             return {
                 ...state,
                 loading: false
 
             }        
         default: 
+
+        case UPDATE_FRIEND_SUCCESS:
+                return {
+                    ...state,
+                    loading: false,
+
+                }
+        case UPDATE_FRIEND_FAILURE:
+            return {
+                ...state,
+                loading: false
+
+            }        
             return state
     }
 }
