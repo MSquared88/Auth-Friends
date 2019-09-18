@@ -1,0 +1,28 @@
+import React from 'react';
+import './App.css';
+
+//router
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+//components
+import ProtectedRoute from './components/ProtectedRoute'
+import Login from './components/Login.jsx'
+import FriendsList from './components/FriendsList'
+import UpdateFriend from './components/UpdateFriend'
+import HomePage from './components/HomePage'
+
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Route exact path='/' component={HomePage}/>
+        <Route path='/login' component={Login} />
+        <ProtectedRoute exact path='/friendsList' component={FriendsList} />
+        <Route exact path='/friendsList/:id/edit' component={UpdateFriend}/>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
